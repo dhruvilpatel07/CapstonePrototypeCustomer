@@ -1,0 +1,6 @@
+framework module Pods_CapstonePrototypeCustomer {
+  umbrella header "Pods-CapstonePrototypeCustomer-umbrella.h"
+
+  export *
+  module * { export * }
+}
