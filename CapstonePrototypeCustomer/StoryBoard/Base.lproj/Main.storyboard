@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="968.11594202898561" y="20.758928571428569"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="VQh-rY-pK8">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SsS-XY-87h" customClass="LoginViewController" customModule="CapstonePrototypeCustomer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SsS-XY-87h" customClass="SignUpViewController" customModule="CapstonePrototypeCustomer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="87O-Gs-9fo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="5167" y="-1543"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Controller View Controller-->
         <scene sceneID="gqx-o2-37B">
             <objects>
-                <tabBarController id="lJd-Vx-mLx" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lJd-Vx-mLx" customClass="MainTabControllerViewController" customModule="CapstonePrototypeCustomer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fZT-Ml-CSU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="3831" y="-11"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="oEw-Le-2nG">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uvk-r9-XXf" customClass="SignUpViewController" customModule="CapstonePrototypeCustomer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uvk-r9-XXf" customClass="LoginViewController" customModule="CapstonePrototypeCustomer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fw3-My-4I9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,14 +251,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-BZ-LOd">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oso-UR-Rf3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="Uvk-r9-XXf" eventType="touchUpInside" id="S9g-m5-pnN"/>
+                                    <action selector="loginTapped:" destination="XKS-D0-xkG" eventType="touchUpInside" id="UK3-Q2-rYb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8wy-BZ-LOd" firstAttribute="leading" secondItem="giQ-Yq-8pg" secondAttribute="leading" constant="20" id="2NI-SZ-05Y"/>
+                            <constraint firstItem="giQ-Yq-8pg" firstAttribute="trailing" secondItem="8wy-BZ-LOd" secondAttribute="trailing" constant="20" id="IFp-ew-4fd"/>
+                            <constraint firstItem="giQ-Yq-8pg" firstAttribute="bottom" secondItem="8wy-BZ-LOd" secondAttribute="bottom" constant="30" id="Ubu-4q-HEQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="giQ-Yq-8pg"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2b-SB-vv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XKS-D0-xkG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="-405"/>
+            <point key="canvasLocation" x="2028.985507246377" y="-405.13392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bz4-wv-wQ2">

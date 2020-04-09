@@ -14,6 +14,7 @@
 		A115375B243F43ED00FBAA18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1153759243F43ED00FBAA18 /* LaunchScreen.storyboard */; };
 		A1153767243F4BA800FBAA18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1153766243F4BA800FBAA18 /* LoginViewController.swift */; };
 		A1153769243F4BBC00FBAA18 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1153768243F4BBC00FBAA18 /* SignUpViewController.swift */; };
+		A115376B243F501600FBAA18 /* MainTabControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A115376A243F501600FBAA18 /* MainTabControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A115375C243F43ED00FBAA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1153766243F4BA800FBAA18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1153768243F4BBC00FBAA18 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A115376A243F501600FBAA18 /* MainTabControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				A1153752243F43EB00FBAA18 /* ViewController.swift */,
 				A1153766243F4BA800FBAA18 /* LoginViewController.swift */,
 				A1153768243F4BBC00FBAA18 /* SignUpViewController.swift */,
+				A115376A243F501600FBAA18 /* MainTabControllerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1153767243F4BA800FBAA18 /* LoginViewController.swift in Sources */,
+				A115376B243F501600FBAA18 /* MainTabControllerViewController.swift in Sources */,
 				A1153753243F43EB00FBAA18 /* ViewController.swift in Sources */,
 				A1153769243F4BBC00FBAA18 /* SignUpViewController.swift in Sources */,
 				A1153751243F43EB00FBAA18 /* AppDelegate.swift in Sources */,
