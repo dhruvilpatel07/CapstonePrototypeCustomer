@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnSignUp: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUpElements()
+    }
+    
+    func setUpElements(){
+
+        Utilities.styleHollowButton(btnLogin)
+        Utilities.styleHollowButton(btnSignUp)
+        
+        
     }
 
 

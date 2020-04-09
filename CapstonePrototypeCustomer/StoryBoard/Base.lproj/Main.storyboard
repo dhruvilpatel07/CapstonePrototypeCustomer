@@ -23,13 +23,12 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7l-Ex-afE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.68560829729999995" green="1" blue="0.98814807029999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="nRf-vg-GBI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="Uvk-r9-XXf" kind="show" id="Aeh-d6-xHt"/>
@@ -37,10 +36,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-rx-FVd">
                                         <rect key="frame" x="0.0" y="65" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.68560829729999995" green="1" blue="0.98814807029999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Sign Up">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="SsS-XY-87h" kind="show" id="9YS-1v-8iO"/>
@@ -61,6 +59,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Giv-kK-wTr"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="Q7l-Ex-afE" id="XXJ-Q7-nFT"/>
+                        <outlet property="btnSignUp" destination="iB4-rx-FVd" id="UAg-hx-5YF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,36 +84,56 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Atf-5L-eHV"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xS2-MA-0wI">
                                         <rect key="frame" x="0.0" y="55" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ych-et-Nm3"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBt-Mq-Swn">
                                         <rect key="frame" x="0.0" y="110" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="iXZ-j5-ccR"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4S-tf-gi5">
                                         <rect key="frame" x="0.0" y="165" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6lg-zI-Zmt"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8n-QU-ZL9">
                                         <rect key="frame" x="0.0" y="220" width="374" height="20.5"/>
@@ -144,6 +166,14 @@
                         <viewLayoutGuide key="safeArea" id="S85-ZY-S3W"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="oOL-RE-K7f"/>
+                    <connections>
+                        <outlet property="btnRegister" destination="ibF-2I-THQ" id="Ogj-Q7-j58"/>
+                        <outlet property="lblError" destination="J8n-QU-ZL9" id="5c1-0r-CaK"/>
+                        <outlet property="txtEmail" destination="xS2-MA-0wI" id="zeP-7B-QPQ"/>
+                        <outlet property="txtName" destination="UGZ-6H-jsD" id="hxx-Ku-Fc1"/>
+                        <outlet property="txtPassword" destination="IBt-Mq-Swn" id="t3N-bt-wmP"/>
+                        <outlet property="txtVerifyPass" destination="w4S-tf-gi5" id="FWR-Uq-BQD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcb-g1-uld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -311,18 +341,28 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dfx-bg-2FZ"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-6E-xSo">
                                         <rect key="frame" x="0.0" y="55" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0MD-Eq-7Xx"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMm-BP-v31">
                                         <rect key="frame" x="0.0" y="110" width="374" height="20.5"/>
@@ -355,6 +395,12 @@
                         <viewLayoutGuide key="safeArea" id="giQ-Yq-8pg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="0bn-Fp-X63"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="8wy-BZ-LOd" id="JQW-JO-Svz"/>
+                        <outlet property="lblError" destination="nMm-BP-v31" id="M79-vo-aQG"/>
+                        <outlet property="txtEmail" destination="Puj-cP-lIC" id="4Fk-cq-IoN"/>
+                        <outlet property="txtPassword" destination="8Xm-6E-xSo" id="km3-nt-zaq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2b-SB-vv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XKS-D0-xkG" userLabel="Exit" sceneMemberID="exit"/>
