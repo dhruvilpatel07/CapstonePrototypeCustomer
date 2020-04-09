@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
 
@@ -30,14 +33,39 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(txtEmail)
         Utilities.styleTextField(txtPassword)
         Utilities.styleFilledButton(btnLogin)
-        
     }
     
-    @IBAction func loginTapped(_ sender: Any) {
+    func showError(_ message:String){
+        lblError.text = message
+        lblError.alpha = 1
+    }
+    
+    func transitionToHome(){
         
         let mainTabController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.mainTabControllerVC) as! MainTabControllerViewController
         
         present(mainTabController, animated: true, completion: nil)
+    }
+    
+    @IBAction func loginTapped(_ sender: Any) {
+        
+        //Creating clead data/ trimming any white spaces
+        let email = txtEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = txtPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        //Setting up sign in method from firebase
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil{
+                //couldn't sign in
+                //self.showError("Error Login in ")
+                self.lblError.text = error!.localizedDescription
+                self.lblError.alpha = 1
+                //var uid = result!.user.uid
+            }
+            else{
+                self.transitionToHome()
+            }//End of If 
+        }//End of Auth.auth.signIn()
     }
     
     /*
