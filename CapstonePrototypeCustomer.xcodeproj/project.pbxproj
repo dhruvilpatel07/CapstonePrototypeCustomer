@@ -54,14 +54,38 @@
 		A115374F243F43EB00FBAA18 /* CapstonePrototypeCustomer */ = {
 			isa = PBXGroup;
 			children = (
-				A1153750243F43EB00FBAA18 /* AppDelegate.swift */,
-				A1153752243F43EB00FBAA18 /* ViewController.swift */,
-				A1153754243F43EB00FBAA18 /* Main.storyboard */,
+				A1153763243F44AE00FBAA18 /* StoryBoard */,
+				A1153765243F44D800FBAA18 /* ViewController */,
+				A1153762243F44A300FBAA18 /* Classes */,
 				A1153757243F43ED00FBAA18 /* Assets.xcassets */,
-				A1153759243F43ED00FBAA18 /* LaunchScreen.storyboard */,
 				A115375C243F43ED00FBAA18 /* Info.plist */,
 			);
 			path = CapstonePrototypeCustomer;
+			sourceTree = "<group>";
+		};
+		A1153762243F44A300FBAA18 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A1153750243F43EB00FBAA18 /* AppDelegate.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A1153763243F44AE00FBAA18 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				A1153754243F43EB00FBAA18 /* Main.storyboard */,
+				A1153759243F43ED00FBAA18 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		A1153765243F44D800FBAA18 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1153752243F43EB00FBAA18 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
