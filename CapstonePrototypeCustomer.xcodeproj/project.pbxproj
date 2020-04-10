@@ -24,6 +24,7 @@
 		A17B37F1243FD9700024343D /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B37F0243FD9700024343D /* ReserveViewController.swift */; };
 		A17B37F3243FEF270024343D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B37F2243FEF270024343D /* SettingsViewController.swift */; };
 		A17B37F524403BE00024343D /* ReservationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B37F424403BE00024343D /* ReservationCollection.swift */; };
+		A17B3839244086EC0024343D /* Screen Shot 2020-04-10 at 6.49.52 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A17B3838244086EC0024343D /* Screen Shot 2020-04-10 at 6.49.52 AM.png */; };
 		A39CB86A66897BF948A47B2C /* Pods_CapstonePrototypeCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7976BDA747618375EFFD5488 /* Pods_CapstonePrototypeCustomer.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		A17B37F0243FD9700024343D /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
 		A17B37F2243FEF270024343D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A17B37F424403BE00024343D /* ReservationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCollection.swift; sourceTree = "<group>"; };
+		A17B3838244086EC0024343D /* Screen Shot 2020-04-10 at 6.49.52 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-04-10 at 6.49.52 AM.png"; sourceTree = "<group>"; };
 		F79C2A71CD0305196E268D64 /* Pods-CapstonePrototypeCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstonePrototypeCustomer.release.xcconfig"; path = "Target Support Files/Pods-CapstonePrototypeCustomer/Pods-CapstonePrototypeCustomer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				A1153765243F44D800FBAA18 /* ViewController */,
 				A1153762243F44A300FBAA18 /* Classes */,
 				A1153757243F43ED00FBAA18 /* Assets.xcassets */,
+				A17B3838244086EC0024343D /* Screen Shot 2020-04-10 at 6.49.52 AM.png */,
 				A115375C243F43ED00FBAA18 /* Info.plist */,
 				A115376C243F60E100FBAA18 /* GoogleService-Info.plist */,
 			);
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A115375B243F43ED00FBAA18 /* LaunchScreen.storyboard in Resources */,
+				A17B3839244086EC0024343D /* Screen Shot 2020-04-10 at 6.49.52 AM.png in Resources */,
 				A115376D243F60E100FBAA18 /* GoogleService-Info.plist in Resources */,
 				A1153758243F43ED00FBAA18 /* Assets.xcassets in Resources */,
 				A1153756243F43EB00FBAA18 /* Main.storyboard in Resources */,

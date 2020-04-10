@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import Firebase
+import MessageUI
 class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var txtName: UITextField!
@@ -143,6 +144,25 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 })
         }
     }
+    
+    /*func sendEmail(){
+        if MFMailComposeViewController.canSendMail(){
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self as! MFMailComposeViewControllerDelegate
+            mail.setToRecipients(["dhruvilpatel07@icloud.com", "dhruvilpatel07@yahoo.ca"])
+            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+            
+            present(mail, animated: true)
+            
+        }else{
+            
+        }
+        
+        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+            controller.dismiss(animated: true, completion: nil)
+        }
+        
+    }*/
     
 
     /*

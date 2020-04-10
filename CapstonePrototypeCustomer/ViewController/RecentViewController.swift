@@ -113,6 +113,24 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let Modify = UITableViewRowAction(style: .normal, title: "Modify") { (action, index) in
+            print("Modify button tapped")
+        }
+        Modify.backgroundColor = .orange
+        
+        let more = UITableViewRowAction(style: .normal, title: "More") { (action, index) in
+            print("More button tapped")
+        }
+        more.backgroundColor = .orange
+        
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { (action, index) in
+            print("Delete button tapped")
+        }
+        delete.backgroundColor = .red
+        
+        return [Modify,more,delete]
+    }
     
 
     /*
