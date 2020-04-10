@@ -53,8 +53,13 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func setUpLocalNotification(){
         let content = UNMutableNotificationContent()
-        content.title = "Reminder"
-        content.body = "Get OUT!!!!"
+        content.title = "Reminder!"
+        let formatter = DateFormatter()
+         formatter.calendar = datePicker.calendar
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateString = formatter.string(from:datePicker.date)
+        content.body = "You have reservation at Gurulakshmi \non \(dateString) for \(numberOfPeople) people"
         content.sound = UNNotificationSound.default
         
         let trig = UNCalendarNotificationTrigger(dateMatching: datePicker.calendar.dateComponents([.year, .month, .day, .hour, .minute], from: datePicker.date), repeats: false)

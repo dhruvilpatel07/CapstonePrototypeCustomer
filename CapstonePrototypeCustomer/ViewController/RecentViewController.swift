@@ -18,6 +18,7 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         let db = Firestore.firestore()
+        tblMostRecent.reloadData()
         /*db.collection("users").getDocuments { (snapshot, error) in
             if error == nil && snapshot != nil {
                 self.mainDelegate.userList.removeAll()
@@ -38,7 +39,7 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         
-        db.collection("reservations").getDocuments { (querySnapshot, err) in
+        db.collection("reservations").whereField("uid", isEqualTo: mainDelegate.userId).getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting Document")
             }else{
@@ -51,6 +52,7 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let customerPhoneNumber = data["phoneNumber"]
                     let numberOfCustmer = data["numberOfPeople"]
                     let bookingDate = Date.init()
+                    
                     //let date = Date(timeIntervalSince1970: postTimestamp.seconds)
                     /*
                      let db = Firestore.firestore()
