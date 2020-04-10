@@ -13,7 +13,11 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var userList = [UsersCollection]() 
+    var userList = [UsersCollection]()
+    var extraUserList = [UsersCollection]()
+    var userName = "abc"
+    var userId = "sdfn39d"
+    var userObject : UsersCollection?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

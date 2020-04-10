@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblError: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
-    
+    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
     override func viewDidLoad() {
@@ -63,6 +63,28 @@ class LoginViewController: UIViewController {
                 //var uid = result!.user.uid
             }
             else{
+                guard let userID = Auth.auth().currentUser?.uid else { return }
+                print(userID)
+                self.mainDelegate.userId = userID
+                
+                //let userId = Auth.auth().currentUser?.uid
+                /*let db = Firestore.firestore()
+                db.collection("users").whereField("uid", isEqualTo: result?.user.uid ?? "vlm0UCMC6GNpjYDShva0dnPWgaQ2").getDocuments(completion: { (QuerySnapshot, error) in
+                    if error == nil{
+                        
+                    }else{
+                        for person in QuerySnapshot!.documents{
+                            let personObject = person.data()
+                            self.mainDelegate.userName = personObject["name"] as! String
+                            self.mainDelegate.userId = personObject["uid"] as! String
+                            //let personID = personObject["uid"]
+                         
+                           // let personM = UsersCollection(id: personID as? String, name: personName as? String, email: personEmail as? String)
+                            //self.mainDelegate.extraUserList.append(personM)
+                            
+                        }
+                    }
+                })*/
                 self.transitionToHome()
             }//End of If 
         }//End of Auth.auth.signIn()
