@@ -28,7 +28,17 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.picker.delegate = self
         self.picker.dataSource = self
         pickerData = ["1","2","3","4","5","6","7","8","9","10"]
+        //lblError.alpha = 0
+        setUpElements()
+    }
+    
+    func setUpElements(){
+        // hide the lable
         lblError.alpha = 0
+        // Style the elements
+        Utilities.styleTextField(txtName)
+        Utilities.styleTextField(txtPhoneNumber)
+        Utilities.styleFilledButton(btnReservation)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
