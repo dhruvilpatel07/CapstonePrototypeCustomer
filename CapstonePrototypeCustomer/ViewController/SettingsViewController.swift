@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var lblName: UILabel!
         let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lblUid.text = mainDelegate.userId

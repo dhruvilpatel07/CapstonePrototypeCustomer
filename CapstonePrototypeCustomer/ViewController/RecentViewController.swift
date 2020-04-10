@@ -122,7 +122,7 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let more = UITableViewRowAction(style: .normal, title: "More") { (action, index) in
             print("More button tapped")
         }
-        more.backgroundColor = .orange
+        more.backgroundColor = .green
         
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { (action, index) in
             print("Delete button tapped")
