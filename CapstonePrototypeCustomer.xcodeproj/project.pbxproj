@@ -23,6 +23,7 @@
 		A17B37EF243FCAAE0024343D /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B37EE243FCAAE0024343D /* RecentViewController.swift */; };
 		A17B37F1243FD9700024343D /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B37F0243FD9700024343D /* ReserveViewController.swift */; };
 		A17B37F3243FEF270024343D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B37F2243FEF270024343D /* SettingsViewController.swift */; };
+		A17B37F524403BE00024343D /* ReservationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B37F424403BE00024343D /* ReservationCollection.swift */; };
 		A39CB86A66897BF948A47B2C /* Pods_CapstonePrototypeCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7976BDA747618375EFFD5488 /* Pods_CapstonePrototypeCustomer.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		A17B37EE243FCAAE0024343D /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		A17B37F0243FD9700024343D /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
 		A17B37F2243FEF270024343D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A17B37F424403BE00024343D /* ReservationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCollection.swift; sourceTree = "<group>"; };
 		F79C2A71CD0305196E268D64 /* Pods-CapstonePrototypeCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstonePrototypeCustomer.release.xcconfig"; path = "Target Support Files/Pods-CapstonePrototypeCustomer/Pods-CapstonePrototypeCustomer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				A1153750243F43EB00FBAA18 /* AppDelegate.swift */,
 				A17B37EA243FC8A10024343D /* MostRecentTableViewCell.swift */,
 				A17B37EC243FC8BD0024343D /* UsersCollection.swift */,
+				A17B37F424403BE00024343D /* ReservationCollection.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				A17B37E8243F67330024343D /* Utilities.swift in Sources */,
 				A17B37F1243FD9700024343D /* ReserveViewController.swift in Sources */,
 				A17B37EF243FCAAE0024343D /* RecentViewController.swift in Sources */,
+				A17B37F524403BE00024343D /* ReservationCollection.swift in Sources */,
 				A1153767243F4BA800FBAA18 /* LoginViewController.swift in Sources */,
 				A115376B243F501600FBAA18 /* MainTabControllerViewController.swift in Sources */,
 				A1153753243F43EB00FBAA18 /* ViewController.swift in Sources */,

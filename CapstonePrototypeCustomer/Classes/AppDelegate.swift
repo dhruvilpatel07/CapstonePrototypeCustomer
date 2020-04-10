@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
     var userList = [UsersCollection]()
+    var reservationList = [ReservationCollection]()
 //    var extraUserList = [UsersCollection]()
 //    var userName = "abc"
     var userId = ""

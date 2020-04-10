@@ -18,7 +18,7 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         let db = Firestore.firestore()
-        db.collection("users").getDocuments { (snapshot, error) in
+        /*db.collection("users").getDocuments { (snapshot, error) in
             if error == nil && snapshot != nil {
                 self.mainDelegate.userList.removeAll()
                 for person in snapshot!.documents {
@@ -33,13 +33,57 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tblMostRecent.reloadData()
             }//end of if
             
-        }
+        }*/
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
+        db.collection("reservations").getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting Document")
+            }else{
+                self.mainDelegate.reservationList.removeAll()
+                for document in querySnapshot!.documents{
+                    print("\(document.documentID) => \(document.data())")
+                    let data = document.data()
+                    let customerId = data["uid"]
+                    let customerName = data["name"]
+                    let customerPhoneNumber = data["phoneNumber"]
+                    let numberOfCustmer = data["numberOfPeople"]
+                    let bookingDate = Date.init()
+                    //let date = Date(timeIntervalSince1970: postTimestamp.seconds)
+                    /*
+                     let db = Firestore.firestore()
+                     let settings = db.settings
+                     settings.areTimestampsInSnapshotsEnabled = true
+                     db.settings = settings
+                     
+                     With this change, timestamps stored in Cloud Firestore will be read back as Firebase Timestamp objects instead of as system Date objects. So you will also need to update code expecting a Date to instead expect a Timestamp. For example:
+                     
+                     // old:
+                     let date: Date = documentSnapshot.get("created_at") as! Date
+                     // new:
+                     let timestamp: Timestamp = documentSnapshot.get("created_at") as! Timestamp
+                     let date: Date = timestamp.dateValue()
+                     */
+                    //let timestamp: Timestamp = data["dateAndTime"] as! Timestamp
+                    //let rDate : Date = timestamp.dateValue()
+                    //let rDate : Date = timestamp.dateValue()
+                    
+                    
+                    let reservationObject = ReservationCollection(id: customerId as! String, name: customerName as! String, phoneNumber: customerPhoneNumber as! String, numberOfPeople: numberOfCustmer as! Int, dateAndTime: bookingDate as! Date)
+                    self.mainDelegate.reservationList.append(reservationObject)
+                    
+                }
+                self.tblMostRecent.reloadData()
+            }//end of if err
+        }//end of query
 
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainDelegate.userList.count
+        return mainDelegate.reservationList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -51,11 +95,19 @@ class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDa
        // let person: PersonModel
         //person = personList[indexPath.row]
         let row = indexPath.row
-        //cell.firstName.text = person.firstName
-        //cell.lastName.text = person.lastName
-        cell.lblName.text = mainDelegate.userList[row].name
-        cell.lblEmail.text = mainDelegate.userList[row].email
-        cell.lblId.text = mainDelegate.userList[row].id
+       // cell.lblName.text = mainDelegate.userList[row].name
+        //cell.lblEmail.text = mainDelegate.userList[row].email
+        //cell.lblId.text = mainDelegate.userList[row].id
+        cell.lblName.text = mainDelegate.reservationList[row].name
+        let formatter = DateFormatter()
+       // formatter.calendar = datePicker.calendar
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateString = formatter.string(from:mainDelegate.reservationList[row].dateAndTime!)
+        cell.lblDateOfReservation.text = dateString
+        cell.lblPhoneNumber.text = mainDelegate.reservationList[row].phoneNumber
+        cell.lblNumberOfPeople.text = String(format: "%.0d", mainDelegate.reservationList[row].numberOfPeople!)
+        
         
         return cell
     }

@@ -10,9 +10,11 @@ import UIKit
 
 class MostRecentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblNumberOfPeople: UILabel!
+    @IBOutlet weak var lblPpl: UILabel!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblEmail: UILabel!
-    @IBOutlet weak var lblId: UILabel!
+    @IBOutlet weak var lblDateOfReservation: UILabel!
+    @IBOutlet weak var lblPhoneNumber: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

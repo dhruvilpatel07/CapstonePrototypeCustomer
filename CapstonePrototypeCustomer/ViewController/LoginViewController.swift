@@ -67,25 +67,9 @@ class LoginViewController: UIViewController {
                 print(userID)
                 self.mainDelegate.userId = userID
                 
-                //let userId = Auth.auth().currentUser?.uid
-                /*let db = Firestore.firestore()
-                db.collection("users").whereField("uid", isEqualTo: result?.user.uid ?? "vlm0UCMC6GNpjYDShva0dnPWgaQ2").getDocuments(completion: { (QuerySnapshot, error) in
-                    if error == nil{
-                        
-                    }else{
-                        for person in QuerySnapshot!.documents{
-                            let personObject = person.data()
-                            self.mainDelegate.userName = personObject["name"] as! String
-                            self.mainDelegate.userId = personObject["uid"] as! String
-                            //let personID = personObject["uid"]
-                         
-                           // let personM = UsersCollection(id: personID as? String, name: personName as? String, email: personEmail as? String)
-                            //self.mainDelegate.extraUserList.append(personM)
-                            
-                        }
-                    }
-                })*/
                 self.transitionToHome()
+                self.txtEmail.text = ""
+                self.txtPassword.text = ""
             }//End of If 
         }//End of Auth.auth.signIn()
     }
