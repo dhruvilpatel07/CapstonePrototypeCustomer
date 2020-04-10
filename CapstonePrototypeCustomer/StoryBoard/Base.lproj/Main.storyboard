@@ -194,8 +194,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="mPx-wh-oft">
-                                <rect key="frame" x="20" y="126" width="374" height="658.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mPx-wh-oft">
+                                <rect key="frame" x="20" y="126" width="374" height="665"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="90Q-b2-8t0">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -204,22 +204,28 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LnD-Tl-gNP">
-                                        <rect key="frame" x="0.0" y="52" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="46" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2l-eJ-t98">
+                                        <rect key="frame" x="0.0" y="92" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.1896351734" blue="0.16048203659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of People: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avb-tO-OLS">
-                                        <rect key="frame" x="0.0" y="104" width="374" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="128.5" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGv-pz-PwW">
-                                        <rect key="frame" x="0.0" y="146.5" width="374" height="216"/>
+                                        <rect key="frame" x="0.0" y="165" width="374" height="216"/>
                                     </pickerView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="80J-kb-E4b">
-                                        <rect key="frame" x="0.0" y="384.5" width="374" height="216"/>
+                                        <rect key="frame" x="0.0" y="397" width="374" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="608164994.85081601">
                                             <!--2020-04-09 22:43:14 +0000-->
                                         </date>
@@ -228,9 +234,12 @@
                                         </date>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KA-bQ-mJ8">
-                                        <rect key="frame" x="0.0" y="622.5" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="629" width="374" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Make Reservation "/>
+                                        <connections>
+                                            <action selector="makeReservationTapped:" destination="SHF-Es-ZRL" eventType="touchUpInside" id="gaN-UT-izF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -248,6 +257,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Reserve" image="icon-reserve" id="0Ag-ou-VIu"/>
                     <connections>
+                        <outlet property="btnReservation" destination="3KA-bQ-mJ8" id="iou-8Y-jpX"/>
+                        <outlet property="datePicker" destination="80J-kb-E4b" id="bxQ-rf-UEw"/>
+                        <outlet property="lblError" destination="y2l-eJ-t98" id="AlR-jj-0sc"/>
                         <outlet property="picker" destination="NGv-pz-PwW" id="AeO-XO-KGl"/>
                         <outlet property="txtName" destination="90Q-b2-8t0" id="6qE-hy-cuZ"/>
                         <outlet property="txtPhoneNumber" destination="LnD-Tl-gNP" id="SVf-cG-nMY"/>

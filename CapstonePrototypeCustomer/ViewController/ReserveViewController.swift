@@ -7,21 +7,28 @@
 //
 
 import UIKit
-
+import UserNotifications
+import Firebase
 class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPhoneNumber: UITextField!
     
+    @IBOutlet weak var lblError: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var btnReservation: UIButton!
     @IBOutlet weak var picker: UIPickerView!
+    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var pickerData: [String] = [String]()
+    var numberOfPeople = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picker.delegate = self
         self.picker.dataSource = self
         pickerData = ["1","2","3","4","5","6","7","8","9","10"]
+        lblError.alpha = 0
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -33,8 +40,87 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        //let a:Int? = Int(firstText.text)
         return pickerData[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //print(pickerData[row])
+        numberOfPeople = Int(pickerData[row])!
+        print(numberOfPeople)
+    }
+    
+    func setUpLocalNotification(){
+        let content = UNMutableNotificationContent()
+        content.title = "Reminder"
+        content.body = "Get OUT!!!!"
+        content.sound = UNNotificationSound.default
+        
+        let trig = UNCalendarNotificationTrigger(dateMatching: datePicker.calendar.dateComponents([.year, .month, .day, .hour, .minute], from: datePicker.date), repeats: false)
+        //unique string identifier
+        let uuid = UUID().uuidString
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trig)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
+    
+    func clearForm(){
+        txtName.text = ""
+        txtPhoneNumber.text = ""
+        picker.selectRow(0, inComponent: 0, animated: true)
+        datePicker.setDate(Date.init(), animated: true)
+        lblError.alpha = 0
+        
+    }
+    func validateField() -> String? {
+        
+        //Check that all fileds are filled
+        if txtName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || txtPhoneNumber.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all field"
+        }
+        return nil
+    }
+    
+    func showError(_ message:String){
+        lblError.text = message
+        lblError.alpha = 1
+    }
+    
+    @IBAction func makeReservationTapped(_ sender: Any) {
+        //Validate the field
+        let error = validateField()
+        
+        if error != nil {
+            showError(error!)
+        }
+        else{
+            //Create cleaned version of data
+            let name = txtName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let phoneNum = txtPhoneNumber.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+                // User was stored successfully
+                let db = Firestore.firestore()
+            db.collection("reservations").addDocument(data: ["phoneNumber":phoneNum, "name":name, "uid":mainDelegate.userId, "numberOfPeople":numberOfPeople, "dateAndTime":datePicker.date], completion: { (error) in
+                    if error != nil {
+                        self.showError("Error saving user data ")
+                    }else{
+                        print("successful")
+                        self.setUpLocalNotification()
+                        let alertController = UIAlertController(title: "Confirmation", message: "Successfuly Reserved", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title: "OK", style: .cancel){ (action: UIAlertAction) in
+                            self.clearForm()
+                        }
+                        alertController.addAction(cancelAction)
+                        self.present(alertController, animated: true)
+                        
+                }
+                })
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -47,3 +133,4 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     */
 
 }
+
