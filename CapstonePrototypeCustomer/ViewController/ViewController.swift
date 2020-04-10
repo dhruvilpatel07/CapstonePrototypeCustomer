@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         
     }
 
-
+    @IBAction func btnTapped(_ sender: Any) {
+        let today = Date()
+        print(today)
+        let modifiedDate = Calendar.current.date(byAdding: .hour, value: -2, to: today)!
+        print(modifiedDate)
+    }
+    
 }
 

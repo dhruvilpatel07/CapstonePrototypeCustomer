@@ -21,7 +21,7 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var pickerData: [String] = [String]()
-    var numberOfPeople = 0
+    var numberOfPeople = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,15 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func setUpLocalNotification(){
+        
+        //Setting a day back
+        let today = datePicker.date
+        print(today)
+        let modifiedDate = Calendar.current.date(byAdding: .day, value: -1, to: today)!
+        print(modifiedDate)
+        
+        datePicker.setDate(modifiedDate, animated: true)
+        
         let content = UNMutableNotificationContent()
         content.title = "Reminder!"
         let formatter = DateFormatter()
@@ -61,7 +70,6 @@ class ReserveViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let dateString = formatter.string(from:datePicker.date)
         content.body = "You have reservation at Gurulakshmi \non \(dateString) for \(numberOfPeople) people"
         content.sound = UNNotificationSound.default
-        
         let trig = UNCalendarNotificationTrigger(dateMatching: datePicker.calendar.dateComponents([.year, .month, .day, .hour, .minute], from: datePicker.date), repeats: false)
         //unique string identifier
         let uuid = UUID().uuidString
